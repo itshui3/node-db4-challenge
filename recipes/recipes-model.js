@@ -2,7 +2,7 @@ const db = require('knex')(require('../knexfile').development);
 
 module.exports = {
   getRecipes,
-  getRecipesById,  // getRecipesById(id)
+  getRecipeById,  // getRecipesById(id)
   getShoppingList, // getShoppingList(recipe_id)
   getInstructions
 }
@@ -11,7 +11,7 @@ function getRecipes() {
   return db('recipes');
 }
 
-function getRecipesById(id) {
+function getRecipeById(id) {
   return db('recipes').where({ id: id })
 }
 
